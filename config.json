@@ -1,0 +1,236 @@
+{
+    "tables": [
+        {
+            "friendlyName": "На продуктові набори",
+            "file": "Відомість.docx",
+            "tableCount": 10,
+            "cursor": 3,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "category",
+                "phone",
+                "issue",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        },
+        {
+            "friendlyName": "На білизну",
+            "file": "ВідомістьНаБілизну.docx",
+            "tableCount": 10,
+            "cursor": 3,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "category",
+                "phone",
+                "issue",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        },
+        {
+            "friendlyName": "На дитяче харчування і памперси",
+            "file": "ВідомістьНаДитХарчування.docx",
+            "tableCount": 11,
+            "cursor": 5,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "issue",
+                "category",
+                "phone",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        },
+        {
+            "friendlyName": "На дорослі памперси",
+            "file": "ВідомістьНаПамперси.docx",
+            "tableCount": 11,
+            "cursor": 9,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "issue",
+                "category",
+                "phone",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        },
+        {
+            "friendlyName": "На набори посуду",
+            "file": "ВідомістьНаПосуд.docx",
+            "tableCount": 10,
+            "cursor": 5,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "category",
+                "phone",
+                "issue",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        },
+        {
+            "friendlyName": "На набори гігієни",
+            "file": "ВідомістьНаГігієну.docx",
+            "tableCount": 10,
+            "cursor": 9,
+            "columnsOrder": [
+                "number",
+                "name",
+                "passport",
+                "category",
+                "phone",
+                "issue",
+                "address",
+                "signature"
+            ],
+            "columns": {
+                "number": {
+                    "type": "empty"
+                },
+                "name": {
+                    "type": "shared"
+                },
+                "passport": {
+                    "type": "shared"
+                },
+                "category": {
+                    "type": "shared"
+                },
+                "phone": {
+                    "type": "shared"
+                },
+                "issue": {
+                    "type": "unique"
+                },
+                "address": {
+                    "type": "shared"
+                },
+                "signature": {
+                    "type": "empty"
+                }
+            }
+        }
+    ]
+}
