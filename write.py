@@ -12,6 +12,15 @@ with open('config.json', 'rb') as file:
 allTableNames = []
 for t in cfg['tables']:
     allTableNames.append(t['friendlyName'])
+
+state = None
+try:
+    with open('state.json', 'rb') as file:
+        state = file.read().decode('utf-8')
+        state = json.loads(state)
+except FileNotFoundError:
+    state = {k: {'cursor': 0} for k in allTableNames}
+
 includedTables = set(allTableNames)
 userInput = ''
 while not '/' in userInput:
@@ -84,14 +93,14 @@ for tn in allTableNames:
         if t['friendlyName'] == tn:
             table = t
             break
-    cursor = table['cursor']
+    cursor = state[tn]['cursor']
     if cursor == 0:
         i = ''
         while not 'Y' in i and not 'y' in i and not 'т' in i and not 'Т' in i:
             i = input(f"Аркуш '{tn}' заповнено. Роздрукуйте і вкладіть наступний, введіть 'так' та натисніть Enter.")
     doc:docx.Document = docx.Document(table['file'])
     wtable = doc.tables[0]
-    row = wtable.row_cells(table['cursor']+1) # +1 because first row is heading
+    row = wtable.row_cells(cursor+1) # +1 because first row is heading
     columnsOrderedNames = table['columnsOrder']
     unique_col_values = unique_columns[tn]
     for i in range(len(columnsOrderedNames)):
@@ -101,7 +110,7 @@ for tn in allTableNames:
         elif column['type'] == 'empty': pass
         else:
             row[i].text = shared_columns[columnsOrderedNames[i]] if columnsOrderedNames[i] in shared_columns else unique_col_values[columnsOrderedNames[i]]
-    table['cursor'] = ((table['cursor']) + 1) % table['tableCount']
+    state['tn']['cursor'] = ((cursor) + 1) % table['tableCount']
     while True:
         try:
             doc.save('temp.docx')
@@ -114,10 +123,10 @@ for tn in allTableNames:
 
 print(f'Served: {str(served)}')
 
-cfg = json.dumps(cfg, ensure_ascii=False, indent=4)
-with open('config.json', 'wb') as file:
-    cfg = cfg.encode('utf-8')
-    file.write(cfg)
+state = json.dumps(state, ensure_ascii=False, indent=4)
+with open('state.json', 'wb') as file:
+    state = state.encode('utf-8')
+    file.write(state)
 
 for k in unique_columns.keys():
     shared_columns[k] = unique_columns[k]
