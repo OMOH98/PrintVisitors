@@ -62,16 +62,23 @@ for t in cfg['tables']:
                 unique_columns[tableName] = {}
             unique_columns[tableName][c] = ''
 
+def fill_all_columns(all: list):
+    i = 0
+    while i < len(all):
+        d,k,c= all[i]
+        try:
+            v = input(f'Введіть значення "{k}" в "{c}":\n')
+            d[k] = v
+        except KeyboardInterrupt:
+            i -= 1
+            if i<0:
+                i = 0
+        
 
-def fillColumn(d: dict, k:str, n = 'shared'):
-    v = input(f'Введіть значення "{k}" в "{n}":\n')
-    d[k] = v
-
-for k in shared_columns.keys():
-    fillColumn(shared_columns, k)
+allColumns = [(shared_columns,key,'загальні') for key in shared_columns.keys()]
 for t in unique_columns.keys():
-    for k in unique_columns[t].keys():
-        fillColumn(unique_columns[t], k, t)
+    allColumns += [(unique_columns[t], key, t) for key in unique_columns[t].keys()]
+fill_all_columns(allColumns)
 
 print("Перевірте порядок аркушів: ")
 i = 1
