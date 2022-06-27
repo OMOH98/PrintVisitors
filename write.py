@@ -19,7 +19,7 @@ while not '/' in userInput:
     for tn in allTableNames:
         print(f'{"+" if tn in includedTables else "-"}{i} {tn}')
         i-=-1
-    userInput = input('Type a string without delimiters, +1 to include second table, -0 to exclude first one, etc:\n')
+    userInput = input('Оберіть потрібні таблиці (наприклад: "-1-4/" означає викреслити таблиці з номерами 1 та 4 і підтвердити):\n')
     i = 0
     while i<len(userInput):
         if userInput[i] == '+' or userInput[i] == '-':
@@ -37,43 +37,39 @@ while not '/' in userInput:
         i-=-1
 
 
-# shared_columns = {}
-# unique_columns = {}
-# for t in cfg['tables']:
-#     tableName = t['friendlyName']
-#     if not tableName in includedTables: continue
+shared_columns = {}
+unique_columns = {}
+for t in cfg['tables']:
+    tableName = t['friendlyName']
+    if not tableName in includedTables: continue
 
-#     for c in t['columns'].keys():
-#         type =  t['columns'][c]['type'] if 'type' in  t['columns'][c] else None
-#         if type == None or type == 'shared':
-#             shared_columns[c] = ''
-#             t['columns'][c]['type'] = 'shared' # do not tolerate None. Will use below
-#         elif type == 'unique':
-#             if not tableName in unique_columns:
-#                 unique_columns[tableName] = {}
-#             unique_columns[tableName][c] = ''
+    for c in t['columns'].keys():
+        type =  t['columns'][c]['type'] if 'type' in  t['columns'][c] else None
+        if type == None or type == 'shared':
+            shared_columns[c] = ''
+            t['columns'][c]['type'] = 'shared' # do not tolerate None. Will use below
+        elif type == 'unique':
+            if not tableName in unique_columns:
+                unique_columns[tableName] = {}
+            unique_columns[tableName][c] = ''
 
 
-# def fillColumn(d: dict, k:str, n = 'shared'):
-#     v = input(f'Enter value for column "{k}" in "{n}":\n')
-#     d[k] = v
+def fillColumn(d: dict, k:str, n = 'shared'):
+    v = input(f'Введіть значення "{k}" в "{n}":\n')
+    d[k] = v
 
-# for k in shared_columns.keys():
-#     fillColumn(shared_columns, k)
-# for t in unique_columns.keys():
-#     for k in unique_columns[t].keys():
-#         fillColumn(unique_columns[t], k, t)
+for k in shared_columns.keys():
+    fillColumn(shared_columns, k)
+for t in unique_columns.keys():
+    for k in unique_columns[t].keys():
+        fillColumn(unique_columns[t], k, t)
 
-# shared_columns = {'name': 'Gleb', 'passport': 'TT255251', 'category': 'VNPO', 'phone': '0671141091'}
-# unique_columns = {'На продуктові набори': {'issue': 'D1'}, 'На памперси': {'issue': 'XXL'}}
-shared_columns = {'name': 'Gleb K', 'passport': 'TT255251', 'category': 'NVPO', 'phone': '0671141091', 'address': 'улица Пушкина, дом Колотушкина, кв зефира, №5.'}
-unique_columns = {'На продуктові набори': {'issue': 'Д1'}, 'На білизну': {'issue': '1 біл. 2 рушн.'}, 'На дитяче харчування і памперси': {'issue': '4*Б'}, 'На дорослі памперси': {'issue': 'ХХL'}, 'На набори посуду': {'issue': '1'}, 'На набори гігієни': {'issue': '1'}}
-print("Check tables order: ")
+print("Перевірте порядок аркушів: ")
 i = 1
 for tn in allTableNames:
     print(f'{i}: {tn}')
     i-=-1
-input("Check order and hit enter to proceed")
+input("Перевірте порядок та натисніть Enter:")
 served = []
 SLEEP_TIME = 9
 for tn in allTableNames:
@@ -91,8 +87,8 @@ for tn in allTableNames:
     cursor = table['cursor']
     if cursor == 0:
         i = ''
-        while not 'Y' in i and not 'y' in i:
-            i = input(f"One table seems to be completed. Confirm that you changed '{tn}' (type yes): ")
+        while not 'Y' in i and not 'y' in i and not 'т' in i and not 'Т' in i:
+            i = input(f"Аркуш '{tn}' заповнено. Роздрукуйте і вкладіть наступний, введіть 'так' та натисніть Enter.")
     doc:docx.Document = docx.Document(table['file'])
     wtable = doc.tables[0]
     row = wtable.row_cells(table['cursor']+1) # +1 because first row is heading

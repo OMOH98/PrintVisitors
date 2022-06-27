@@ -6,34 +6,34 @@
             "tableCount": 10,
             "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "category",
-                "phone",
-                "issue",
-                "signature"
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Категорія",
+                "Телефон",
+                "Видано",
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
@@ -44,34 +44,34 @@
             "tableCount": 10,
             "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "category",
-                "phone",
-                "issue",
-                "signature"
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Категорія",
+                "Телефон",
+                "Видано",
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
@@ -80,36 +80,36 @@
             "friendlyName": "На дитяче харчування і памперси",
             "file": "ВідомістьНаДитХарчування.docx",
             "tableCount": 11,
-            "cursor": 5,
+            "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "issue",
-                "category",
-                "phone",
-                "signature"
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Видано",
+                "Категорія",
+                "Телефон",
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
@@ -118,36 +118,36 @@
             "friendlyName": "На дорослі памперси",
             "file": "ВідомістьНаПамперси.docx",
             "tableCount": 11,
-            "cursor": 9,
+            "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "issue",
-                "category",
-                "phone",
-                "signature"
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Видано",
+                "Категорія",
+                "Телефон",
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
@@ -156,36 +156,36 @@
             "friendlyName": "На набори посуду",
             "file": "ВідомістьНаПосуд.docx",
             "tableCount": 10,
-            "cursor": 5,
+            "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "category",
-                "phone",
-                "issue",
-                "signature"
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Категорія",
+                "Телефон",
+                "Видано",
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
@@ -194,40 +194,40 @@
             "friendlyName": "На набори гігієни",
             "file": "ВідомістьНаГігієну.docx",
             "tableCount": 10,
-            "cursor": 9,
+            "cursor": 3,
             "columnsOrder": [
-                "number",
-                "name",
-                "passport",
-                "category",
-                "phone",
-                "issue",
+                "Номер",
+                "ПІБ",
+                "Паспорт",
+                "Категорія",
+                "Телефон",
+                "Видано",
                 "address",
-                "signature"
+                "Підпис"
             ],
             "columns": {
-                "number": {
+                "Номер": {
                     "type": "empty"
                 },
-                "name": {
+                "ПІБ": {
                     "type": "shared"
                 },
-                "passport": {
+                "Паспорт": {
                     "type": "shared"
                 },
-                "category": {
+                "Категорія": {
                     "type": "shared"
                 },
-                "phone": {
+                "Телефон": {
                     "type": "shared"
                 },
-                "issue": {
+                "Видано": {
                     "type": "unique"
                 },
                 "address": {
                     "type": "shared"
                 },
-                "signature": {
+                "Підпис": {
                     "type": "empty"
                 }
             }
