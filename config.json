@@ -4,7 +4,7 @@
             "friendlyName": "На продуктові набори",
             "file": "Відомість.docx",
             "tableCount": 10,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",
@@ -42,7 +42,7 @@
             "friendlyName": "На білизну",
             "file": "ВідомістьНаБілизну.docx",
             "tableCount": 10,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",
@@ -80,7 +80,7 @@
             "friendlyName": "На дитяче харчування і памперси",
             "file": "ВідомістьНаДитХарчування.docx",
             "tableCount": 11,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",
@@ -118,7 +118,7 @@
             "friendlyName": "На дорослі памперси",
             "file": "ВідомістьНаПамперси.docx",
             "tableCount": 11,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",
@@ -156,7 +156,7 @@
             "friendlyName": "На набори посуду",
             "file": "ВідомістьНаПосуд.docx",
             "tableCount": 10,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",
@@ -194,7 +194,7 @@
             "friendlyName": "На набори гігієни",
             "file": "ВідомістьНаГігієну.docx",
             "tableCount": 10,
-            "cursor": 3,
+            "cursor": 2,
             "columnsOrder": [
                 "Номер",
                 "ПІБ",

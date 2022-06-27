@@ -119,6 +119,5 @@ with open('config.json', 'wb') as file:
     cfg = cfg.encode('utf-8')
     file.write(cfg)
 
-
-print(shared_columns)
-print(unique_columns)
+with open('log.txt', 'ab+') as file:
+    file.write(f'[{str(shared_columns)},{str(unique_columns)}]\n'.encode('utf-8'))
