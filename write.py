@@ -28,7 +28,14 @@ while not '/' in userInput:
     for tn in allTableNames:
         print(f'{"+" if tn in includedTables else "-"}{i} {tn}')
         i-=-1
-    userInput = input('Оберіть потрібні таблиці (наприклад: "-1-4/" означає викреслити таблиці з номерами 1 та 4 і підтвердити):\n')
+    try:
+        userInput = input('Оберіть потрібні таблиці (наприклад: "-1-4/" означає викреслити таблиці з номерами 1 та 4 і підтвердити):\n')
+    except KeyboardInterrupt:
+        i = 0
+        for tn in allTableNames:
+            print(f'{"+" if tn in includedTables else "-"}{i} {tn}')
+            i-=-1
+        break
     i = 0
     while i<len(userInput):
         if userInput[i] == '+' or userInput[i] == '-':
