@@ -87,7 +87,11 @@ def fill_all_columns(all: list):
 allColumns = [(shared_columns,key,'загальні') for key in shared_columns.keys()]
 for t in unique_columns.keys():
     allColumns += [(unique_columns[t], key, t) for key in unique_columns[t].keys()]
+tiedPhoneNumbers = {}
+keyForTiedPhoneNumbers = 'Номери через кому'
+allColumns.append((tiedPhoneNumbers, keyForTiedPhoneNumbers, 'Телефони родичів'))
 fill_all_columns(allColumns)
+
 
 print("Перевірте порядок аркушів: ")
 i = 1
@@ -154,6 +158,6 @@ with open('state.json', 'wb') as file:
 
 for k in unique_columns.keys():
     shared_columns[k] = unique_columns[k]
-
+shared_columns['TIED_NUMBERS'] = f'{tiedPhoneNumbers[keyForTiedPhoneNumbers]},{shared_columns["Телефон"]}'
 with open('log.txt', 'ab+') as file:
     file.write(f'{json.dumps(shared_columns, ensure_ascii=False)},\n'.encode('utf-8'))
