@@ -15,7 +15,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"
@@ -52,7 +52,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"
@@ -89,7 +89,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"
@@ -126,7 +126,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"
@@ -163,7 +163,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"
@@ -201,7 +201,7 @@
             ],
             "columns": {
                 "Номер": {
-                    "type": "empty"
+                    "type": "autofill"
                 },
                 "ПІБ": {
                     "type": "shared"

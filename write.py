@@ -118,6 +118,7 @@ for tn in allTableNames:
         while not 'Y' in i and not 'y' in i and not 'т' in i and not 'Т' in i:
             i = input(f"Аркуш '{tn}' заповнено. Роздрукуйте і вкладіть наступний, введіть 'так' та натисніть Enter.")
     wtable = doc.tables[tableIndex]
+    origHeight = wtable.rows[cursor+1].height
     row = wtable.row_cells(cursor+1) # +1 because first row is heading
     columnsOrderedNames = table['columnsOrder']
     unique_col_values = unique_columns[tn]
@@ -128,6 +129,8 @@ for tn in allTableNames:
         elif column['type'] == 'empty': pass
         else:
             row[i].text = shared_columns[columnsOrderedNames[i]] if columnsOrderedNames[i] in shared_columns else unique_col_values[columnsOrderedNames[i]]
+    if wtable.rows[cursor+1].height != origHeight:
+        print(f'Warning: height breach in {tn} table')
     cursor = ((cursor) + 1) % table['tableCount']
     state[tn]['cursor'] = cursor
 
@@ -139,7 +142,7 @@ while True:
         time.sleep(0.2)
         continue
 os.startfile('temp.docx', 'print')
-time.sleep(4)
+time.sleep(10)
 
 
 print(f'Served: {str(served)}')
