@@ -77,9 +77,11 @@ def fill_all_columns(all: list):
             v = input(f'Введіть значення "{k}" в "{c}":\n')
             d[k] = v
         except KeyboardInterrupt:
-            i -= 1
-            if i<0:
-                i = 0
+            i -= 2
+        i-=-1
+        if i<0:
+            i = 0
+
         
 
 allColumns = [(shared_columns,key,'загальні') for key in shared_columns.keys()]
@@ -93,13 +95,16 @@ for tn in allTableNames:
     print(f'{i}: {tn}')
     i-=-1
 input("Перевірте порядок та натисніть Enter:")
+
+
 served = []
-SLEEP_TIME = 9
+doc:docx.Document = docx.Document('blank.docx')
+tableIndex = -1
+
 for tn in allTableNames:
     served.append(tn)
+    tableIndex-=-1
     if not tn in includedTables:
-        os.startfile('blank.docx', 'print')
-        time.sleep(SLEEP_TIME)
         continue
 
     table = None
@@ -112,8 +117,7 @@ for tn in allTableNames:
         i = ''
         while not 'Y' in i and not 'y' in i and not 'т' in i and not 'Т' in i:
             i = input(f"Аркуш '{tn}' заповнено. Роздрукуйте і вкладіть наступний, введіть 'так' та натисніть Enter.")
-    doc:docx.Document = docx.Document(table['file'])
-    wtable = doc.tables[0]
+    wtable = doc.tables[tableIndex]
     row = wtable.row_cells(cursor+1) # +1 because first row is heading
     columnsOrderedNames = table['columnsOrder']
     unique_col_values = unique_columns[tn]
@@ -124,16 +128,19 @@ for tn in allTableNames:
         elif column['type'] == 'empty': pass
         else:
             row[i].text = shared_columns[columnsOrderedNames[i]] if columnsOrderedNames[i] in shared_columns else unique_col_values[columnsOrderedNames[i]]
-    state['tn']['cursor'] = ((cursor) + 1) % table['tableCount']
-    while True:
-        try:
-            doc.save('temp.docx')
-            break
-        except PermissionError:
-            time.sleep(0.2)
-            continue
-    os.startfile('temp.docx', 'print')
-    time.sleep(SLEEP_TIME)
+    cursor = ((cursor) + 1) % table['tableCount']
+    state[tn]['cursor'] = cursor
+
+while True:
+    try:
+        doc.save('temp.docx')
+        break
+    except PermissionError:
+        time.sleep(0.2)
+        continue
+os.startfile('temp.docx', 'print')
+time.sleep(4)
+
 
 print(f'Served: {str(served)}')
 
